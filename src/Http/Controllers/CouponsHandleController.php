@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Extensions\Api\Controllers;
+namespace Mysic\LaravelAdminApization\Http\Controllers;
 
 use App\Admin\Extensions\Api\HandleController;
 use Illuminate\Http\Request;
