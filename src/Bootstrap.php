@@ -62,7 +62,9 @@ class Bootstrap
                 if(!$adminGroup) {
                     continue;
                 }
-                array_push($adminGroup, $list);
+                foreach($list as $item) {
+                    array_push($adminGroup, $item);
+                }
                 self::$router->middlewareGroup($groupName, $adminGroup);
             }
         }

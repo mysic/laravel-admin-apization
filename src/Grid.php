@@ -4,7 +4,7 @@ namespace Mysic\LaravelAdminApization;
 
 use Closure;
 use Encore\Admin\Grid\Column;
-use App\Admin\Extensions\Api\Grid\Tools\Paginator;
+use Mysic\LaravelAdminApization\Grid\Tools\Paginator;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Pagination\LengthAwarePaginator;
 

@@ -2,7 +2,7 @@
 
 namespace Mysic\LaravelAdminApization\Http\Controllers;
 
-use App\Admin\Extensions\Api\HandleController;
+use Mysic\LaravelAdminApization\HandleController;
 use Illuminate\Http\Request;
 
 /**

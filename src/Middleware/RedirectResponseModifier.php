@@ -7,6 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ViewErrorBag;
 use Mysic\LaravelAdminApization\ResponseMessage;
 
@@ -35,11 +36,13 @@ class RedirectResponseModifier
         }
         elseif($response instanceof Response) {
             if(!empty($response->exception)) {
+                Log::error($response->exception);
                 return new Response($this->error([],'操作错误，请稍后再试'));
             }
             try {
                 $data = unserialize($response->getContent());
             }catch(\Throwable $t) {
+                Log::error($t->getMessage());
                 return new Response($this->error([],'此页面未找到' . $t->getMessage()));
             }
             return new Response($this->success($data));
