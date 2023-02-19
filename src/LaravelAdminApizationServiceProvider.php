@@ -16,7 +16,7 @@ class LaravelAdminApizationServiceProvider extends ServiceProvider
         }
 
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config' => config_path()], 'laravel-admin-apization');
+            $this->publishes([__DIR__.'/config' => config_path()], 'laravel-admin-apization');
         }
     }
 }
