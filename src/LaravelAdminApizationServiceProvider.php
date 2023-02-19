@@ -19,15 +19,19 @@ class LaravelAdminApizationServiceProvider extends ServiceProvider
             $this->loadViewsFrom($views, 'laravel-admin-apization');
         }
 
-        if ($this->app->runningInConsole() && $assets = $extension->assets()) {
-            $this->publishes(
-                [$assets => public_path('vendor/mysic/laravel-admin-apization')],
-                'laravel-admin-apization'
-            );
+        if ($this->app->runningInConsole()) {
+            if($assets = $extension->assets()) {
+                $this->publishes(
+                    [$assets => public_path('vendor/mysic/laravel-admin-apization')],
+                    'laravel-admin-apization'
+                );
+            }
+
+            $this->publishes([__DIR__.'/../config' => config_path()], 'laravel-admin-config');
         }
 
         $this->app->booted(function () {
-            LaravelAdminApization::routes(__DIR__.'/../routes/web.php');
+            Bootstrap::boot();
         });
     }
 }

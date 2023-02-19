@@ -1,18 +1,18 @@
 {
     "name": "mysic/laravel-admin-apization",
-    "description": "description...",
+    "description": "鉴于公司要求把现有的管理后台修改为前后端分离的方式，因此开发了此扩展。此扩展通过少量的路由配置，即可将原有的laravel-admin后台所有请求修改为API的方式",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
     "homepage": "https://github.com/mysic/laravel-admin-apization",
     "license": "MIT",
     "authors": [
         {
-            "name": "your name",
-            "email": "your email"
+            "name": "mysic",
+            "email": "gisiyang@gmail.com"
         }
     ],
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=7.4.0",
         "encore/laravel-admin": "~1.6"
     },
     "require-dev": {
