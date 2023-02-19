@@ -20,12 +20,12 @@ class Bootstrap
 
     public static function boot()
     {
-        self::$routeAttributes = config('apization.router.attributes');
-        self::$routeMiddleware = config('apization.middlewares.replacements');
-        self::$routeBlackList = config('apization.router.blacklist');
-        self::$routeReplacementsClosure = config('apization.router.replacements');
-        self::$pushToMiddlewareGroup = config('apization.middlewares.groups');
-        self::$routeBlacklistResponse = config('apization.router.response.blacklist');
+        self::$routeAttributes = config('apization.router.attributes',[]);
+        self::$routeMiddleware = config('apization.middlewares.replacements',[]);
+        self::$routeBlackList = config('apization.router.blacklist',[]);
+        self::$routeReplacementsClosure = config('apization.router.replacements',function(){});
+        self::$pushToMiddlewareGroup = config('apization.middlewares.groups',[]);
+        self::$routeBlacklistResponse = config('apization.router.response.blacklist',[]);
 
         self::$router = app('router');
         self::disableRoutes();
